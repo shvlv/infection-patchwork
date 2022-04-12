@@ -20,7 +20,7 @@ jobs:
           coverage: ${{ matrix.coverage-driver }}
           tools: composer:v2
       - name: Packagist.com Auth
-        run: composer config --global --auth github-oauth.github.com token ${{ secrets.GA_AUTH }}
+        run: composer config --global --auth github-oauth.github.com ${{ secrets.GA_AUTH }}
       - name: Install composer dependencies (use cache)
         uses: ramsey/composer-install@v1
         with:
