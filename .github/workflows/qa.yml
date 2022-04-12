@@ -25,12 +25,7 @@ jobs:
         uses: ramsey/composer-install@v1
         with:
           composer-options: "--prefer-dist"
-      - name: Install infection
-        run: |
-          wget https://github.com/infection/infection/releases/download/0.26.6/infection.phar
-          wget https://github.com/infection/infection/releases/download/0.26.6/infection.phar.asc
-          chmod +x infection.phar
       - name: Run unit tests
         run: ./vendor/bin/phpunit --no-coverage
       - name: Run infection
-        run: ./infection.phar --min-covered-msi=30 --threads=4 --logger-github --only-covered
+        run: vendor/bin/infection --min-covered-msi=30 --threads=4 --logger-github --only-covered
