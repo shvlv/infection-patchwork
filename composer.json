@@ -1,0 +1,44 @@
+{
+    "name": "shvv/infection-patchwork",
+    "description": "Test.",
+    "license": "GPL-2.0-or-later",
+    "type": "library",
+    "require": {
+        "php": "^8.0"
+
+    },
+    "require-dev": {
+        "brain/monkey": "^2.6",
+        "phpunit/phpunit": "^9.5"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shvlv/infection"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Shvv\\InfectionPatchwok\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shvv\\InfectionPatchwok\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": true
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "tests": "@php ./vendor/phpunit/phpunit/phpunit --coverage-text",
+        "tests:no-cov": "@php ./vendor/phpunit/phpunit/phpunit --no-coverage"
+    }
+}
