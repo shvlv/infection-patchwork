@@ -4,7 +4,6 @@ on:
 jobs:
   php-unit-tests:
     name: PHP Unit tests
-    needs: static-code-analysis-backend
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 1
