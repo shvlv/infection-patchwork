@@ -25,7 +25,7 @@ final class FilteredLocator implements Locator
         return (string) apply_filters(
             $this->filterName,
             '',
-            $templateName
+            esc_html($templateName)
         );
     }
 }
