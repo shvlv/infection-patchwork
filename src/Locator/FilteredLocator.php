@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Shvv\InfectionPatchwok\Locator;
 
+/**
+ * @infection-ignore-all
+ */
 final class FilteredLocator implements Locator
 {
     private string $filterName;
